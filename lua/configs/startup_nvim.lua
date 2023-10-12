@@ -54,7 +54,7 @@ local settings = {
         margin = 5,
         content = {
             { " Find File", "Telescope find_files", "<leader>ff" },
-            { " Find Word", "Telescope live_grep", "<leader>lg" },
+            { " Recent project", "Telescope projects", "<leader>pp" },
             { " Recent Files", "Telescope oldfiles", "<leader>of" },
             { " File Browser", "Telescope file_browser", "<leader>fb" },
             { " Colorschemes", "Telescope colorscheme", "<leader>cs" },

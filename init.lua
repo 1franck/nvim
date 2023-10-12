@@ -176,18 +176,6 @@ require('lazy').setup({
     { import = 'custom.plugins' },
 }, {})
 
--- Project man
-require('telescope').load_extension('projects')
-
-vim.keymap.set('n', '<leader>pr', function()
-    local project_nvim = require("project_nvim")
-    local recent_projects = project_nvim.get_recent_projects()
-
-    print(vim.inspect(recent_projects))
-end, { desc = 'Recent projects' })
-
-vim.keymap.set('n', '<leader>pp', require'telescope'.extensions.projects.projects, { desc = 'Telescope projects' })
-
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
