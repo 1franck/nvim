@@ -186,7 +186,7 @@ vim.keymap.set('n', '<leader>pr', function()
     print(vim.inspect(recent_projects))
 end, { desc = 'Recent projects' })
 
-vim.keymap.set('n', '<leader>pp', ':Telescope projects\n', { desc = 'Telescope projects' })
+vim.keymap.set('n', '<leader>pp', require'telescope'.extensions.projects.projects, { desc = 'Telescope projects' })
 
 -- [[ Setting options ]]
 -- See `:help vim.o`
