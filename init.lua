@@ -11,6 +11,7 @@ require("lazy").setup({
     { import = 'plugins' },
 })
 
+-- TODO REORGANIZE THIS
 -- Setup neovim lua configuration
 require('neodev').setup()
 
