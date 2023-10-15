@@ -16,6 +16,10 @@ vim.keymap.set('n', "<leader>/", function()
     require("Comment.api").toggle.linewise.current()
 end, { desc = 'Toggle comment' })
 
+-- diffview
+vim.keymap.set('n', '<leader>gv', ':DiffviewOpen<cr>', { desc = 'Open Git Diffview' })
+vim.keymap.set('n', '<leader>gc', ':DiffviewClose<cr>', { desc = 'Open Git Diffview' })
+
 -- gitsigns (exported)
 local gitsigns_on_attach = function(bufnr)
     vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
