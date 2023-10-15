@@ -1,3 +1,5 @@
+local K = {} -- for exporting keymaps that cannot be set here directly
+
 -- general keymaps
 vim.keymap.set('n', '<leader>qq', ":qa!<cr>", { desc = 'Quit' })
 
@@ -8,13 +10,23 @@ vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { de
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
--- gitsigns
-vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
-vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
-vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+-- comment
+vim.keymap.set('n', "<leader>/", function()
+    require("Comment.api").toggle.linewise.current()
+end, { desc = 'Toggle comment' })
 
--- LSP
-local on_attach = function(_, bufnr)
+-- gitsigns (exported)
+local gitsigns_on_attach = function(bufnr)
+    vim.keymap.set('n', '<leader>gp', require('gitsigns').prev_hunk, { buffer = bufnr, desc = '[G]o to [P]revious Hunk' })
+    vim.keymap.set('n', '<leader>gn', require('gitsigns').next_hunk, { buffer = bufnr, desc = '[G]o to [N]ext Hunk' })
+    vim.keymap.set('n', '<leader>ph', require('gitsigns').preview_hunk, { buffer = bufnr, desc = '[P]review [H]unk' })
+end
+K.gitsigns = {
+    on_attach = gitsigns_on_attach,
+}
+
+-- LSP (exported)
+local lsp_on_attach = function(_, bufnr)
     -- Set keymaps only for the LSP client attached to the current buffer
     local nmap = function(keys, func, desc)
         if desc then
@@ -50,3 +62,9 @@ local on_attach = function(_, bufnr)
         vim.lsp.buf.format()
     end, { desc = 'Format current buffer with LSP' })
 end
+
+K.LSP = {
+    on_attach = lsp_on_attach,
+}
+
+return K
