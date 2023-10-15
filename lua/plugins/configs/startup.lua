@@ -1,3 +1,7 @@
+local vv = vim.version()
+local footer = string.format("  nvim %s.%s.%s", vv.major, vv.minor, vv.patch)
+require("lazy")
+
 local settings = {
     -- every line should be same width without escaped \
     header = {
@@ -53,12 +57,12 @@ local settings = {
         title = "Basic Commands",
         margin = 5,
         content = {
-            { " Find File", "Telescope find_files", "<leader>ff" },
-            { " Recent project", "Telescope projects", "<leader>pp" },
-            { " Recent Files", "Telescope oldfiles", "<leader>of" },
-            --{ " File Browser", "Telescope file_browser", "<leader>fb" },
-            { " Colorschemes", "Telescope colorscheme", "<leader>cs" },
-            { " New File", "lua require'startup'.new_file()", "<leader>nf" },
+            { "  Find File", "Telescope find_files", "space-ff" },
+            { "  Recent project", "Telescope projects", "space-pp" },
+            { "  Recent Files", "Telescope oldfiles", "space-of" },
+            --{ " File Browser", "Telescope file_browser", space-fb" },
+            { "  Themes", "Telescope colorscheme", "space-cs" },
+            { "  New File", "lua require'startup'.new_file()", "space-nf" },
         },
         highlight = "String",
         default_color = "",
@@ -71,7 +75,7 @@ local settings = {
         fold_section = false,
         title = "Footer",
         margin = 5,
-        content = { "neovim 0.9.2" },
+        content = { footer },
         highlight = "Number",
         default_color = "",
         oldfiles_amount = 0,

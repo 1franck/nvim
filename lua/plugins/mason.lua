@@ -13,5 +13,7 @@ return {
             --
             --vim.g.mason_binaries_list = opts.ensure_installed
         end,
+        init = function()
+        end
     },
 }
