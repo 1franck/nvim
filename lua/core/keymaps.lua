@@ -2,6 +2,7 @@ local K = {} -- for exporting keymaps that cannot be set here directly
 
 -- general keymaps
 vim.keymap.set('n', '<leader>qq', ":qa!<cr>", { desc = 'Quit' })
+vim.keymap.set('i', '<C-z>', "<esc>u", { desc = 'Undo' })
 
 -- telescope
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
