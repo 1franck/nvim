@@ -16,6 +16,9 @@ vim.keymap.set('n', "<leader>/", function()
     require("Comment.api").toggle.linewise.current()
 end, { desc = 'Toggle comment' })
 
+-- memento
+vim.keymap.set('n', '<leader>mm', require('memento').toggle, { desc = 'Toggle [M]emento' })
+
 -- diffview
 vim.keymap.set('n', '<leader>gv', ':DiffviewOpen<cr>', { desc = 'Open Git Diffview' })
 vim.keymap.set('n', '<leader>gc', ':DiffviewClose<cr>', { desc = 'Close Git Diffview' })
