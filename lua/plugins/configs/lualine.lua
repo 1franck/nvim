@@ -13,8 +13,8 @@ local options = {
     },
     sections = {
         lualine_a = { 'mode' },
-        lualine_b = { 'branch', 'diff', 'diagnostics' },
-        lualine_c = { 'filename' },
+        lualine_b = { 'branch', 'diff', 'filename' },
+        lualine_c = { 'diagnostics', require('auto-session.lib').current_session_name },
         lualine_x = { 'encoding', 'fileformat', 'filetype' },
         lualine_y = { 'progress' },
         lualine_z = { 'location' }

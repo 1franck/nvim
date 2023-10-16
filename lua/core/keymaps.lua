@@ -3,6 +3,8 @@ local K = {} -- for exporting keymaps that cannot be set here directly
 -- general keymaps
 vim.keymap.set('n', '<leader>qq', ":qa!<cr>", { desc = 'Quit' })
 vim.keymap.set('i', '<C-z>', "<esc>u", { desc = 'Undo' })
+vim.keymap.set('n', '<C-z>', "<esc>u", { desc = 'Undo' })
+vim.keymap.set('i', '<C-p', "<esc>")
 
 -- telescope
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
@@ -10,6 +12,10 @@ vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+
+-- nvim-tree 
+vim.keymap.set('n', "<C-n>", ":NvimTreeToggle<CR>", { desc = 'Toggle NvimTree' })
+vim.keymap.set('n', "<leader>e", ":NvimTreeFocus<CR>", { desc = 'Focus NvimTree' })
 
 -- comment
 vim.keymap.set('n', "<leader>/", function()

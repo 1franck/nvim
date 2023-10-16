@@ -6,7 +6,6 @@ vim.api.nvim_exec("language en_US", true)
 require "core.lazy"
 require "core.options"
 
-
 require("lazy").setup({
     { import = 'plugins' },
 })
