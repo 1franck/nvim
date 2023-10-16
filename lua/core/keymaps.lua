@@ -29,8 +29,8 @@ end, { desc = 'Toggle comment' })
 vim.keymap.set('n', '<leader>mm', require('memento').toggle, { desc = 'Toggle [M]emento' })
 
 -- diffview
-vim.keymap.set('n', '<leader>gv', ':DiffviewOpen<cr>', { desc = 'Open Git Diffview' })
-vim.keymap.set('n', '<leader>gc', ':DiffviewClose<cr>', { desc = 'Close Git Diffview' })
+--vim.keymap.set('n', '<leader>gv', ':DiffviewOpen<cr>', { desc = 'Open Git Diffview' })
+--vim.keymap.set('n', '<leader>gc', ':DiffviewClose<cr>', { desc = 'Close Git Diffview' })
 
 -- gitsigns (exported)
 local gitsigns_on_attach = function(bufnr)
