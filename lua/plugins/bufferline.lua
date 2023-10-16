@@ -6,7 +6,18 @@ return {
         version = "*",
         dependencies = 'nvim-tree/nvim-web-devicons',
         init = function()
-            require("bufferline").setup{}
+            require("bufferline").setup {
+                options = {
+                    offsets = {
+                        {
+                            filetype = "NvimTree",
+                            text = "",
+                            highlight = "Directory",
+                            separator = true
+                        }
+                    },
+                }
+            }
         end
     }
 }
