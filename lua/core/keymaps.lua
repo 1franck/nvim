@@ -17,11 +17,14 @@ vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<C-f>', ':lua require("telescope.builtin").current_buffer_fuzzy_find({ sorter = require("telescope.sorters").get_substr_matcher({})})<cr>', { desc = "Current buffer fuzzy find" })
+vim.keymap.set('n', '<C-f>', ':lua require("telescope.builtin").current_buffer_fuzzy_find({ sorter = require("telescope.sorters").get_substr_matcher({})})<cr>', { desc = "Current buffer fuzzy find", silent = true })
 
 -- nvim-tree 
 vim.keymap.set('n', "<C-n>", ":NvimTreeToggle<CR>", { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', "<leader>e", ":NvimTreeFocus<CR>", { desc = 'Focus NvimTree' })
+
+-- harpoon
+vim.keymap.set('n', '<C-h>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>', { desc = 'Toggle Harppon Menu', silent = true })
 
 -- comment
 vim.keymap.set('n', "<leader>/", function()
