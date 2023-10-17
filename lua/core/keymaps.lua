@@ -5,7 +5,7 @@ vim.keymap.set('n', '<leader>qq', ":qa!<cr>", { desc = 'Quit' })
 vim.keymap.set('n', '<C-z>', "<esc>u", { desc = 'Undo' })
 vim.keymap.set('i', '<C-z>', "<esc>u", { desc = 'Undo' })
 vim.keymap.set('i', '<C-a>', "<esc>ggVG<cr>", { desc = 'Select All' })
-vim.keymap.set('i', '<C-s>', "<esc>:w<cr>i", { desc = 'Save' })
+vim.keymap.set('i', '<C-s>', "<esc>:w<cr>a", { desc = 'Save' })
 vim.keymap.set({"n", "v", "i"}, '<C-Up>', "<esc>:m -2<cr>", { desc = 'Move line Up' })
 vim.keymap.set({"n", "v", "i"}, '<C-Down>', "<esc>:m +1<cr>", { desc = 'Move line Down' })
 
