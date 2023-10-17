@@ -10,7 +10,7 @@ require("lazy").setup({
     { import = 'plugins' },
 })
 
-require("neodev").setup()
+require "neodev".setup()
 
 require "core.lsp"
 require "core.keymaps"
