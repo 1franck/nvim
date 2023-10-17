@@ -25,6 +25,9 @@ vim.keymap.set('n', "<leader>/", function()
     require("Comment.api").toggle.linewise.current()
 end, { desc = 'Toggle comment' })
 
+-- toggleterm (exported)
+K.toggleterm = [[<c-t>]]
+
 -- memento
 vim.keymap.set('n', '<leader>mm', require('memento').toggle, { desc = 'Toggle [M]emento' })
 

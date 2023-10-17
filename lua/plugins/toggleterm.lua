@@ -8,7 +8,7 @@ return {
                 require("toggleterm").setup()
             end,
             opts = {
-                open_mapping = [[<c-t>]],
+                open_mapping = require("core.keymaps").toggleterm,
             }
         }
     }
