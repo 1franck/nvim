@@ -8,6 +8,8 @@ vim.keymap.set('i', '<C-a>', "<esc>ggVG<cr>", { desc = 'Select All' })
 vim.keymap.set('i', '<C-s>', "<esc>:w<cr>a", { desc = 'Save' })
 vim.keymap.set({"n", "v", "i"}, '<C-Up>', "<esc>:m -2<cr>", { desc = 'Move line Up' })
 vim.keymap.set({"n", "v", "i"}, '<C-Down>', "<esc>:m +1<cr>", { desc = 'Move line Down' })
+vim.keymap.set('n', '<C-o>', ':bnext<cr>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<C-i>', ':bprev<cr>', { desc = 'Prev buffer' })
 
 -- telescope
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
