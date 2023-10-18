@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader =  " "
 
-vim.api.nvim_exec("language en_US", true)
+vim.api.nvim_exec("language en_US.utf8", true)
 
 require "core.lazy"
 require "core.options"
@@ -14,3 +14,4 @@ require "neodev".setup()
 
 require "core.lsp"
 require "core.keymaps"
+require "core.terminals"
