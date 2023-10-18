@@ -14,4 +14,4 @@ require "neodev".setup()
 
 require "core.lsp"
 require "core.keymaps"
-require "core.terminals"
+--require "core.terminals"
