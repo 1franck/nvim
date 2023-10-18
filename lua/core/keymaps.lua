@@ -6,8 +6,9 @@ vim.keymap.set('n', '<C-z>', "<esc>u", { desc = 'Undo' })
 vim.keymap.set('i', '<C-z>', "<esc>u", { desc = 'Undo' })
 vim.keymap.set('i', '<C-a>', "<esc>ggVG<cr>", { desc = 'Select All' })
 vim.keymap.set('i', '<C-s>', "<esc>:w<cr>a", { desc = 'Save', silent = true })
-vim.keymap.set({"n", "v", "i"}, '<C-Up>', "<esc>:m -2<cr>", { desc = 'Move line Up' })
-vim.keymap.set({"n", "v", "i"}, '<C-Down>', "<esc>:m +1<cr>", { desc = 'Move line Down' })
+vim.keymap.set('n', '<C-s>', ":w<cr>", { desc = 'Save' })
+vim.keymap.set({ "n", "v", "i" }, '<C-Up>', "<esc>:m -2<cr>", { desc = 'Move line Up' })
+vim.keymap.set({ "n", "v", "i" }, '<C-Down>', "<esc>:m +1<cr>", { desc = 'Move line Down' })
 vim.keymap.set('n', '<C-o>', ':bnext<cr>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<C-i>', ':bprev<cr>', { desc = 'Prev buffer' })
 
@@ -17,16 +18,19 @@ vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { des
 vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
 vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
-vim.keymap.set('n', '<C-f>', ':lua require("telescope.builtin").current_buffer_fuzzy_find({ sorter = require("telescope.sorters").get_substr_matcher({})})<cr>', { desc = "Current buffer fuzzy find", silent = true })
+vim.keymap.set('n', '<C-f>',
+    ':lua require("telescope.builtin").current_buffer_fuzzy_find({ sorter = require("telescope.sorters").get_substr_matcher({})})<cr>',
+    { desc = "Current buffer fuzzy find", silent = true })
 vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<C-S-f>',  require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
+vim.keymap.set('n', '<C-S-f>', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
 
--- nvim-tree 
+-- nvim-tree
 vim.keymap.set('n', "<C-n>", ":NvimTreeToggle<CR>", { desc = 'Toggle NvimTree' })
 vim.keymap.set('n', "<leader>e", ":NvimTreeFocus<CR>", { desc = 'Focus NvimTree' })
 
 -- harpoon
-vim.keymap.set('n', '<C-h>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>', { desc = 'Toggle Harppon Menu', silent = true })
+vim.keymap.set('n', '<C-h>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>',
+    { desc = 'Toggle Harppon Menu', silent = true })
 
 -- comment
 vim.keymap.set('n', "<leader>/", function()
