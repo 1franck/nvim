@@ -13,6 +13,7 @@ vim.keymap.set('i', '<C-z>', "<esc>u", { desc = 'Undo' })
 vim.keymap.set('i', '<C-a>', "<esc>ggVG<cr>", { desc = 'Select All' })
 vim.keymap.set('i', '<C-s>', "<esc>:w<cr>a", { desc = 'Save', silent = true })
 vim.keymap.set('i', '<C-e>', "<esc>", { desc = 'Go to Normal Mode', silent = true }) -- there is also <C-o> which is swith to normal temporary
+vim.keymap.set('i', '<C-v>', "<esc>pa", { desc = 'Paste' })
 
 -- telescope
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
