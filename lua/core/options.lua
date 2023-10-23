@@ -207,7 +207,7 @@ local options = {
     -- readonly = "", -- disallow writing the buffer
     -- redrawtime = "", -- timeout for 'hlsearch' and :match highlighting
     -- regexpengine = "", -- default regexp engine to use
-    -- relativenumber = "", -- show relative line number in front of each line
+    relativenumber = true, -- show relative line number in front of each line
     -- report = "", -- threshold for reporting nr. of lines changed
     -- revins = "", -- inserting characters will work backwards
     -- rightleft = "", -- window is right-to-left oriented
@@ -341,4 +341,3 @@ local options = {
 for k, v in pairs(options) do
     vim.opt[k] = v
 end
-
