@@ -15,6 +15,14 @@ vim.keymap.set('i', '<C-s>', "<esc>:w<cr>:Format<cr>a", { desc = 'Save', silent 
 vim.keymap.set('i', '<C-e>', "<esc>", { desc = 'Go to Normal Mode', silent = true }) -- there is also <C-o> which is swith to normal temporary
 vim.keymap.set('i', '<C-v>', "<esc>pa", { desc = 'Paste' })
 
+-- persistence
+-- restore the session for the current directory
+vim.api.nvim_set_keymap("n", "<leader>qs", [[<cmd>lua require("persistence").load()<cr>]], {})
+-- restore the last session
+vim.api.nvim_set_keymap("n", "<leader>ql", [[<cmd>lua require("persistence").load({ last = true })<cr>]], {})
+-- stop Persistence => session won't be saved on exit
+vim.api.nvim_set_keymap("n", "<leader>qd", [[<cmd>lua require("persistence").stop()<cr>]], {})
+
 -- telescope
 vim.keymap.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
