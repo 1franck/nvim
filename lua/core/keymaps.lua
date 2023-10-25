@@ -1,4 +1,6 @@
 local K = {} -- for exporting keymaps that cannot be set here directly
+-- NOTES:
+-- <M> is alt, <C> is ctrl
 
 -- general keymaps
 vim.keymap.set('n', '<leader>qq', ":qa!<cr>", { desc = 'Quit' })
@@ -44,19 +46,14 @@ vim.keymap.set('n', '<C-h>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>
     { desc = 'Toggle Harppon Menu', silent = true })
 
 -- comment
-vim.keymap.set('n', "<leader>/", function()
-    require("Comment.api").toggle.linewise.current()
-end, { desc = 'Toggle comment' })
+vim.keymap.set('n', "<leader>/", require("Comment.api").toggle.linewise.current, { desc = 'Toggle comment' })
+vim.keymap.set('n', "<C>/", require("Comment.api").toggle.linewise.current, { desc = 'Toggle comment' }) -- don't work, because neovim doesn't recognize this combination
 
 -- toggleterm (exported)
 K.toggleterm = [[<c-t>]]
 
 -- memento
 vim.keymap.set('n', '<leader>mm', require('memento').toggle, { desc = 'Toggle [M]emento' })
-
--- diffview
---vim.keymap.set('n', '<leader>gv', ':DiffviewOpen<cr>', { desc = 'Open Git Diffview' })
---vim.keymap.set('n', '<leader>gc', ':DiffviewClose<cr>', { desc = 'Close Git Diffview' })
 
 -- gitsigns (exported)
 local gitsigns_on_attach = function(bufnr)
