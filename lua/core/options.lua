@@ -321,6 +321,7 @@ local options = {
     -- wildmode = "", -- mode for 'wildchar' command-line expansion
     -- wildoptions = "", -- specifies how command line completion is done
     -- winaltkeys = "", -- when the windows system handles ALT keys
+    winbar = "%=%m %f :%l %r",
     -- window = "", -- nr of lines to scroll for CTRL-F and CTRL-B
     -- winheight = "", -- minimum number of lines for the current window
     -- winhighlight = "", -- window-local highlighting
