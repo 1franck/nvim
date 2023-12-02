@@ -1,5 +1,5 @@
 local options = {
-  PATH = "skip",
+  PATH = "prepend",
 
   ui = {
     icons = {
