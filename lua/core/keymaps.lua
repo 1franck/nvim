@@ -38,8 +38,11 @@ vim.keymap.set('n', '<C-p>', require('telescope.builtin').find_files, { desc = '
 vim.keymap.set('n', '<C-S-f>', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' }) -- dont work in windows terminal
 
 -- nvim-tree
-vim.keymap.set('n', "<C-n>", ":NvimTreeToggle<CR>", { desc = 'Toggle NvimTree' })
-vim.keymap.set('n', "<leader>e", ":NvimTreeFocus<CR>", { desc = 'Focus NvimTree' })
+--vim.keymap.set('n', "<C-n>", ":NvimTreeToggle<CR>", { desc = 'Toggle NvimTree' })
+--vim.keymap.set('n', "<leader>e", ":NvimTreeFocus<CR>", { desc = 'Focus NvimTree' })
+
+-- oil
+vim.keymap.set('n', "<leader>e", ":Oil --float<CR>", { desc = 'Open Oil' })
 
 -- harpoon
 vim.keymap.set('n', '<C-h>', ':lua require("harpoon.ui").toggle_quick_menu()<cr>',
