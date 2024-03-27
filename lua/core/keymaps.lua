@@ -3,7 +3,7 @@ local K = {} -- for exporting keymaps that cannot be set here directly
 -- <M> is alt, <C> is ctrl
 
 -- general keymaps
-vim.keymap.set('n', '<leader>qq', ":qa!<cr>", { desc = 'Quit' })
+vim.keymap.set('n', '<leader>qq', ":bdelete<cr>", { desc = "close buffer" })
 vim.keymap.set('n', '<C-z>', "<esc>u", { desc = 'Undo' })
 vim.keymap.set('n', '<C-s>', ":Format<cr>:w<cr>", { desc = 'Save' })
 vim.keymap.set({ "n", "v", "i" }, '<C-Up>', "<esc>:m -2<cr>", { desc = 'Move line Up' })
