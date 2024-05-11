@@ -2,10 +2,17 @@
 
 local servers = {
     -- clangd = {},
-     gopls = {},
+    gopls = {},
     -- pyright = {},
     -- rust_analyzer = {},
-     tsserver = {},
+    tsserver = {
+        init_options = {
+            preferences = {
+                importModuleSpecifierPreference = 'relative',
+                importModuleSpecifierEnding = 'minimal',
+            },
+        },
+    },
     -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
     lua_ls = {
